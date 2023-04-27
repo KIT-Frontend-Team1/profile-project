@@ -21,8 +21,8 @@ const Profile = ({name, image, isNew}) => {
       <S.Star>
         <S.Btn onClick={handleCount}>{name} <FontAwesomeIcon icon={faThumbsUp} /> {count} </S.Btn>
         <div className='bookmarkIcon' onClick={handleBookmark} >
-          {/* js 문법 삼항 연산자 사용, 별모양 아이콘 클릭시 class add, remove해주어 북마크 기능처럼 컬러 변경 */}
-          {bookmark ? (<button className='colorOn'><FontAwesomeIcon icon={faStar} /></button>) : (<button><FontAwesomeIcon icon={faStar} /></button>)}
+          {/* js 문법 삼항 연산자 사용, 별모양 아이콘 클릭시 class='colorOn' add, remove해주어 북마크 기능처럼 컬러 변경 */}
+          <button className={bookmark ? 'colorOn' : null}><FontAwesomeIcon icon={faStar} /></button>
         </div>
       </S.Star>
       {/* && js 문법 사용, isNew가 true일 때만 StyledSpan태그가 보여진다. */}
