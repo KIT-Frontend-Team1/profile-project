@@ -15,7 +15,6 @@ const HyerinProfile = () => {
     });
   };
   const [page, setPage] = useState(0);
-  //params와 일치하는 key의 tab에다가 active 클래스를 추가해준다
   return (
     <>
       <Title>혜린의 스토리</Title>
