@@ -1,7 +1,25 @@
+/* Header.js */
 .colorOn {
   color: #ffa200;
 }
+.lightIcon {
+  height: 1.5rem;
+  color: #444;
+}
 
+.headerRight {
+  height: 1.25rem;
+  color: #333;
+}
+
+
+ /* Main.js */
 .linkPadding {
   padding: 1rem;
 }
+
+/* AppProfile.js */
+.container {
+  padding: 1rem 0;
+}
+

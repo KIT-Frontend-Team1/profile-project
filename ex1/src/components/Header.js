@@ -1,8 +1,36 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import '../App.css'
 import styled from 'styled-components';
 import { faSeedling, faCircleHalfStroke, faMagnifyingGlass  } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from 'react-router-dom';
+import { ThemeContext } from '../ThemeContext';
+
+const Header = () => {
+  const {isDark, setIsDark} = useContext(ThemeContext);
+
+  const toggleTheme = () => {
+    setIsDark(!isDark);
+  }
+
+  return (
+    <Container style={{background : isDark ? '#262626' : null}}>
+      <HeaderStyled className={isDark ? 'dark' : null}>
+        <Title>
+          <FontAwesomeIcon icon={faSeedling} className='lightIcon' style={{color : isDark ? '#ebebeb' : null}} />
+          <Span style={{color : isDark ? '#ebebeb' : null}}>Yeseul's Page</Span>
+        </Title>
+        <Right>
+          <Btn onClick={toggleTheme}><FontAwesomeIcon icon={faCircleHalfStroke} className='headerRight' style={{color : isDark ? '#fff' : null}} /></Btn>
+          <FontAwesomeIcon icon={faMagnifyingGlass} className='headerRight' style={{color : isDark ? '#ebebeb' : null}} />
+            <Link to='/'>
+              <BtnNew className={isDark ? 'dark' : null}>새 글 작성</BtnNew>
+            </Link>
+        </Right>
+      </HeaderStyled>
+    </Container>
+  )
+}
 
 const Container = styled.div`
   height: 4rem;
@@ -15,6 +43,9 @@ const HeaderStyled = styled.header`
   justify-content: space-between;
   padding: 0 20%;
   border-bottom: 1px solid #333;
+  &.dark {
+    border-bottom: 1px solid #ebebeb;
+  } 
 `
 const Title = styled.div`
   display: flex;
@@ -34,6 +65,10 @@ const BtnNew = styled.button`
   cursor: pointer;
   border-radius: 20px;
   padding: 0.5rem 1rem;
+  &.dark {
+    color: #ebebeb;
+    border: 1px solid #ebebeb;
+  }
 `
 
 const Right = styled.div`
@@ -42,25 +77,5 @@ const Right = styled.div`
   align-items: center;
   justify-content: space-between;
 `
-
-const Header = () => {
-  return (
-    <Container>
-      <HeaderStyled>
-        <Title>
-          <FontAwesomeIcon icon={faSeedling} style={{height: '1.5rem', color: '#444'}} />
-          <Span>Yeseul's Page</Span>
-        </Title>
-        <Right>
-          <Btn><FontAwesomeIcon icon={faCircleHalfStroke} style={{height: '1.25rem', color: '#333'}} /></Btn>
-          <FontAwesomeIcon icon={faMagnifyingGlass} style={{height: '1.25rem', color: '#333'}} />
-            <Link to='/'>
-              <BtnNew>새 글 작성</BtnNew>
-            </Link>
-        </Right>
-      </HeaderStyled>
-    </Container>
-  )
-}
 
 export default Header

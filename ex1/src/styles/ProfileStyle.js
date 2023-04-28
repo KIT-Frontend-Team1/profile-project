@@ -11,7 +11,7 @@ export const StyledProfile = styled.div`
   height: 300px;
   text-align: center;
   padding: 1rem;
-  margin: 1rem auto;
+  margin: 0 auto 1rem auto;
   background-color: #ebebeb;
   border-radius: 20px;
   margin-bottom: 1rem;

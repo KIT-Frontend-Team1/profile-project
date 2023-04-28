@@ -7,7 +7,7 @@ const Main = () => {
   return (
     <React.Fragment>
       <M.StyledMain style={{ background: "rgb(241, 243, 249)" }}>
-        <M.StyledH1>🔥페어 1팀의 리액트 1주차 과제입니다🔥</M.StyledH1>
+        <M.StyledH1>🔥페어 2팀의 리액트 1주차 과제입니다🔥</M.StyledH1>
         <M.StyledP>
           <Link to="/yeseul" className="linkPadding">
             GO TO YESEUL's PAGE 👉
