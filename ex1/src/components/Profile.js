@@ -12,7 +12,6 @@ const Profile = ({name, image, isNew}) => {
     setCount(prev => prev + 1)
   }
 
-  // hook함수 seContext 사용으로 모든 자식 요소에 props를 전달하지 않고 필요한 노드에만 적용 가능
   const handleBookmark = () => {
     setBookmark(!bookmark);
   }

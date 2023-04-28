@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { ThemeContext } from '../ThemeContext';
 
 const Header = () => {
+  // hook함수 useContext 사용으로 모든 자식 요소에 props를 전달하지 않고 필요한 노드에만 적용 가능
   const {isDark, setIsDark} = useContext(ThemeContext);
 
   const toggleTheme = () => {
