@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Jaewon = () => {
+const JaewonProfile = () => {
     return (
         <>
             <Header>
@@ -41,7 +41,7 @@ const Jaewon = () => {
     );
 };
 
-export default Jaewon;
+export default JaewonProfile;
 
 const Header = styled.div`
     height: 100vh;
