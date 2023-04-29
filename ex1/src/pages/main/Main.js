@@ -14,7 +14,7 @@ const Main = () => {
           </Link>
         </M.StyledP>
         <M.StyledP>
-          <Link to="/seungyong">GO TO SEUNGYOUNG's PAGE 👉</Link>
+          <Link to="/seungyong/0">GO TO SEUNGYOUNG's PAGE 👉</Link>
         </M.StyledP>
         <M.StyledP>
           <Link to="/jaewon">GO TO JAEWON's PAGE 👉 </Link>
