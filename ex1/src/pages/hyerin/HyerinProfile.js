@@ -5,10 +5,20 @@ import { faHeart, faCommentDots } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useParams } from "react-router-dom";
 const HyerinProfile = () => {
-  const { id } = useParams();
+  //url에 있는 파라미터의 값을 가져옴
+  //탭을 클릭할때마다 맨뒤의 숫자가 바뀌고(id) 이를 id라는 변수에 집어넣어 활용할 수 있다.
+  //=> 탭을 클릭할 때마다 사진이 바뀌도록 만듦
+  //61번째 줄
+  const { id } = useParams(); //page 1
+  //탭마다 좋아요수를 다르게 저장함
+  //75번째 줄
   const [like, setLike] = useState([0, 0, 0]);
+  //clickLike : 해당 게시물의 좋아요 수를 1씩 올려주는 함수
+  //처음의 state는 배열로 되어있어 배열의 원소마다 게시물의 좋아요 수를
+  //각각 저장할 수 있다.
   const clickLike = () => {
     setLike((prev) => {
+      //[0,0,0]
       const newLike = [...prev];
       newLike[id] += 1;
       return newLike;
@@ -20,6 +30,7 @@ const HyerinProfile = () => {
       <Title>혜린의 스토리</Title>
       <TabContainer>
         <Link to={`/hyerin/0`}>
+          {/*탭 밑에 있는 border css*/}
           <Tab
             className={page === 0 ? "show" : null}
             onClick={() => {
@@ -51,6 +62,7 @@ const HyerinProfile = () => {
         </Link>
       </TabContainer>
       <ProfileBox>
+        {/*이미지가 변환되는 곳*/}
         <ProfileImg src={`../images/hyerin${id}.jpeg`} />
         <ContentBox>
           <IconBox>
@@ -65,6 +77,7 @@ const HyerinProfile = () => {
               style={{ height: "2rem", color: "#333" }}
             />
           </IconBox>
+          {/*각 이미지마다 좋아요수를 다르게 보여주고 저장*/}
           <TextBox>
             <div>좋아요 {like[id]}개</div>
           </TextBox>
