@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Main from '../pages/main/Main';
 import AppProfile from '../pages/yeseul/AppProfile';
-import JawonHeader from '../components/JaewonHeader';
-
+import HyerinProfile from '../pages/hyerin/HyerinProfile';
+import Jaewon from '../pages/jaewon/Jaewon';
 const router = createBrowserRouter([
     {
         path: '/',
@@ -18,7 +18,11 @@ const router = createBrowserRouter([
     },
     {
         path: '/jaewon',
-        element: <JawonHeader />,
+        element: <Jaewon />,
+    },
+    {
+        path: '/hyerin/:id',
+        element: <HyerinProfile />,
     },
 ]);
 
